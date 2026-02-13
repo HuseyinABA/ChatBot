@@ -328,7 +328,7 @@ import json
 
 # --- 2. API AYARLARI ---
 # Senin verdiğin anahtarı buraya ekledim.
-API_KEY = "AIzaSyCyscTZvURk6igWCDdPI8Tvm7CUhWrsuwM"
+API_KEY = ".env"
 
 genai.configure(api_key=API_KEY)
 
@@ -695,7 +695,7 @@ nest_asyncio.apply()
 os.system("pkill ngrok") # Temizlik
 
 # API KEY
-API_KEY = "AIzaSyCyscTZvURk6igWCDdPI8Tvm7CUhWrsuwM"
+API_KEY = ".env"
 genai.configure(api_key=API_KEY)
 
 app = FastAPI()
@@ -951,7 +951,7 @@ def get_home():
     return html_template
 
 # --- 5. BAŞLAT ---
-NGROK_TOKEN = "2qQPU3oaxFiVa82gfar0EzCjyRD_4VrauLEFKE9khoVeEkpYT"
+NGROK_TOKEN = ".env"
 ngrok.set_auth_token(NGROK_TOKEN)
 try:
     public_url = ngrok.connect(8000).public_url
@@ -961,3 +961,4 @@ except: pass
 config = uvicorn.Config(app, host="0.0.0.0", port=8000, log_level="error")
 server = uvicorn.Server(config)
 await server.serve()
+
